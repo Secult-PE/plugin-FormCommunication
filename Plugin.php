@@ -22,8 +22,9 @@ class Plugin extends \MapasCulturais\Plugin
     {
         $app = App::i();
         $plugin = $this;
-        $app->view->enqueueStyle("app","form-communication","css/form-communication.css");
         $app->hook('template(site.index.main-footer):end', function () use ($plugin, $app) {
+            $app->view->enqueueStyle("app","form-communication","css/form-communication.css");
+
             /** @var Theme $this */
             $url = $app->createUrl("formcommunication","communication");
             $this->part("form-communication-button-footer",['url'=>$url]);

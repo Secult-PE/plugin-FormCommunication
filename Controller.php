@@ -18,7 +18,9 @@ class Controller extends \MapasCulturais\Controller
     }
 
     public function GET_communication(){
+        /** @var App $app */
         $app = App::i();
+        $app->view->enqueueStyle("app","form-communication","css/form-communication.css");
         $this->render("form");
     }
     
